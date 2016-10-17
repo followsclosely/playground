@@ -29,28 +29,9 @@ public class Player implements Comparable<Player>
 		return (player.getPoints() == points) ? 0 : (player.getPoints() < points) ? -1 : 1;
 	}
 
-	public String getName()
-	{
-		return name;
-	}
-
-	public float getPoints()
-	{
-		return points;
-	}
-
-	public String getPosition()
-	{
-		return position;
-	}
-
-	public String getTeam()
-	{
-		return team;
-	}
-
-	public String getId()
-	{
-		return id;
-	}
+	public String getName(){return name;}
+	public float  getPoints(){return points;}
+	public String getPosition(){return position;}
+	public String getTeam(){return team;}
+	public String getId(){return id;}
 }
