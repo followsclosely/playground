@@ -4,14 +4,14 @@ import java.io.IOException;
 import java.util.List;
 
 import misc.football.lineup.BestLineupGenerator;
+import misc.football.lineup.SimpleLineupGenerator;
 import misc.football.lineup.ValueLineupGenerator;
 
 public class Launcher
 {
 	public static void main(String[] args) throws IOException
 	{
-		PlayerPool pool = new PlayerPool();
-		pool.load("src/misc/football/W2015.csv");
+		PlayerPool pool = new DefaultPlayerPoolLoader("src/misc/football/W2015.csv").load(new PlayerPool());
 
 		RosterSettings rosterSettings = new RosterSettings()
 				.addLimit("QB", 1)
@@ -23,7 +23,7 @@ public class Launcher
 
 		LineupGenerator[] lineupGenerators = new LineupGenerator[]
 		{
-				//new SimpleLineupGenerator(),
+				new SimpleLineupGenerator(),
 				new BestLineupGenerator(), 
 				new ValueLineupGenerator()
 		};
