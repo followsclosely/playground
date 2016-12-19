@@ -68,6 +68,7 @@ public class Roster implements Comparable<Roster>
 
 	public String getUniqueKey()
 	{
+		//Sort the players so duplicate rosters are eliminated.
 		Collections.sort(players);
 
 		// Generate a new hashCode
