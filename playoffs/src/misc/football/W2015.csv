@@ -10,7 +10,7 @@ Minnesota D/ST,MIN,D,10
 Washington D/ST,WSH,D,5
 Houston D/ST,HOU,D,5
 Arizona D/ST,ARI,D,-4
-#
+#,#,#,#
 Brandon McManus,DEN,K,35
 Chris Boswell,PIT,K,22
 Graham Gano,CAR,K,21
@@ -23,7 +23,7 @@ Blair Walsh,MIN,K,8
 Mike Nugent,CIN,K,4
 Dustin Hopkins,WSH,K,1
 Nick Novak,HOU,K,0
-#
+#,#,#,#
 Cam Newton    ,CAR,QB,75.6
 Tom Brady,NE,QB,58.71
 Aaron Rodgers,GB,QB,51.84
@@ -36,7 +36,7 @@ Kirk Cousins,WSH,QB,31.03
 A.J. McCarron,CIN,QB,17.05
 Teddy Bridgewater,MIN,QB,11.51
 Brian Hoyer,HOU,QB,0.34
-#
+#,#,#,#
 C.J. Anderson,DEN,RB,48.3
 Jonathan Stewart,CAR,RB,44.7
 David Johnson,ARI,RB,41.6
@@ -56,7 +56,7 @@ Adrian Peterson,MIN,RB,5.8
 Marshawn Lynch,SEA,RB,5.5
 Alfred Morris,WSH,RB,5
 Giovani Bernard,CIN,RB,3
-#
+#,#,#,#
 Rob Gronkowski,NE,TE,55.7
 Greg Olsen,CAR,TE,45.1
 Travis Kelce,KC,TE,29.1
@@ -70,7 +70,7 @@ Tyler Kroft,CIN,TE,0
 XX_SEA_TE,SEA,TE,0
 XX_HOU_TE,HOU,TE,0
 XX_ARI_TE,ARI,TE,0
-#
+#,#,#,#
 Martavis Bryant,PIT,WR,46.7
 Emmanuel Sanders,DEN,WR,39
 Jermaine Kearse,SEA,WR,38.8
