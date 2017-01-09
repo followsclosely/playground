@@ -1,3 +1,4 @@
+#Player,Team,Position,Points
 Carolina D/ST,CAR,D,54
 Denver D/ST,DEN,D,48
 Kansas City D/ST,KC,D,29
@@ -61,7 +62,6 @@ Rob Gronkowski,NE,TE,55.7
 Greg Olsen,CAR,TE,45.1
 Travis Kelce,KC,TE,29.1
 Jordan Reed,WSH,TE,27
-#Player,Team,Position,Points
 Owen Daniels,DEN,TE,23.1
 Richard Rodgers,GB,TE,12.6
 Tyler Eifert,CIN,TE,10.8
