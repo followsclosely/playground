@@ -8,6 +8,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import org.springframework.beans.factory.FactoryBean;
+
 /** 
  * This PlayerPoolLoader loads the first player for each position per team.
  * Assumes the player file is sorted and in the following format:
@@ -23,12 +25,16 @@ import java.util.Set;
 public class DefaultPlayerPoolLoader implements PlayerPoolLoader
 {
 	private String resource = null;
+	public void setResource(String resource){this.resource = resource;}
 	
+	public DefaultPlayerPoolLoader()
+	{
+	}
 	public DefaultPlayerPoolLoader(String resource)
 	{
 		this.resource = resource;
 	}
-
+	
 	/* (non-Javadoc)
 	 * @see misc.football.PlayerPoolLoaderd#load(misc.football.PlayerPool)
 	 */

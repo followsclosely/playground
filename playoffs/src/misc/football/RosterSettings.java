@@ -6,7 +6,8 @@ import java.util.Set;
 
 public class RosterSettings
 {
-	private Map<String, Integer> limits = new HashMap<String, Integer>();
+	protected Map<String, Integer> limits = new HashMap<String, Integer>();
+	public void setLimits(Map<String, Integer> limits){this.limits = limits;}
 
 	public Integer getLimit(String position)
 	{

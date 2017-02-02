@@ -2,10 +2,10 @@ package misc.football.lineup;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.function.Function;
 
 import misc.football.LineupGenerator;
 import misc.football.Player;
@@ -15,13 +15,21 @@ import misc.football.RosterSettings;
 
 public class SimpleLineupGenerator implements LineupGenerator
 {
+	private int numberToRetrun = 1; 
+	public void setNumberToRetrun(int numberToRetrun){this.numberToRetrun = numberToRetrun;}
+
+	//12QB*11RB*10RB*9WR*8WR*7WR*6TE*5DT*4K*(only 80% of the lineups are unique)
+	double estimatedTotal = 12*11*10*9*8*7*6*5*4*.8;
+	public void setEstimatedTotal(double estimatedTotal){this.estimatedTotal = estimatedTotal;}
+
 	public ArrayList<Roster> generate(PlayerPool pool, RosterSettings rosterSettings)
 	{
 		int total = 0;
 		List<Player> fxs = new ArrayList<Player>();
-		fxs.addAll(pool.getPlayers("RB"));
+		
+		//fxs.addAll(pool.getPlayers("RB"));
 		fxs.addAll(pool.getPlayers("WR"));
-		fxs.addAll(pool.getPlayers("TE"));
+		//fxs.addAll(pool.getPlayers("TE"));
 
 		ArrayList<Roster> sortedRosters = new ArrayList<Roster>();
 		Set<String> unique = new HashSet<String>();
@@ -74,9 +82,13 @@ public class SimpleLineupGenerator implements LineupGenerator
 																			{
 																				sortedRosters.add(rosterFx);
 																			}
-																			if (++total % 100000 == 0)
+																			
+																			if (++total % 1000000 == 0)
 																			{
-																				System.out.println(sortedRosters.size() + "/" + total);
+																				Collections.sort(sortedRosters);
+																				//Only keep the top {numberToRetrun}.
+																				sortedRosters.subList(numberToRetrun, sortedRosters.size()).clear();
+																				System.out.format("%s %.2f%% %d %n", new Date(), ((total/estimatedTotal)*100), total );
 																			}
 																		}
 																	}
@@ -95,9 +107,11 @@ public class SimpleLineupGenerator implements LineupGenerator
 				}
 			}
 		}
-
+		
 		Collections.sort(sortedRosters);
-
+		sortedRosters.subList(numberToRetrun, sortedRosters.size()).clear();
+		System.out.format("%s %.2f%% %d %n", new Date(), ((total/estimatedTotal)*100), total );
+		
 		return sortedRosters;
 	}
 }

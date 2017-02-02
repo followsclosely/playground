@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean name="rosterSettings" class="misc.football.RosterSettings">
+		<property name="limits">
+			<map>
+				<entry key="QB" value="1" />
+				<entry key="RB" value="2" />
+				<entry key="WR" value="3" />
+				<entry key="TE" value="1" />
+				<entry key="K" value="1" />
+				<entry key="D" value="1" />
+			</map>
+		</property>
+	</bean>
+
+	<bean name="playerPool" class="misc.football.PlayerPoolFactoryBean">
+		<property name="resource" value="src/misc/football/stats/2017-W3.csv" />
+	</bean>
+
+	<bean id="launcher" class="misc.football.Launcher">
+		<property name="playerPool" ref="playerPool" />
+		<property name="rosterSettings" ref="rosterSettings" />
+		<property name="lineupGenerators">
+		  <list>
+		    <bean class="misc.football.lineup.SimpleLineupGenerator" />
+		    <bean class="misc.football.lineup.BestLineupGenerator" />
+		    <bean class="misc.football.lineup.ValueLineupGenerator" />
+		  </list>
+		</property>
+	</bean>
+
+</beans>
